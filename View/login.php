@@ -1,3 +1,4 @@
+<?php require_once("functionsCookies.php"); ?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -8,23 +9,25 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
           integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
           integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-    <link rel="stylesheet" href="../css/style.css">
+
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Berkshire+Swash|Nosifer" rel="stylesheet">
     <title>Authenticate System</title>
 </head>
+<?php
+if (isExists($userLogin)) {
+    header("location:chicha.php");
+}
+?>
 <body>
-<h1 class="authentication">Authentication </h1>
+<header class="header">
+    <h1 class="login">Login </h1>
+</header>
 <main class=" container main">
-    <form class="form-horizontal form" role="form">
-        <div class="form-group">
-            <label for="name" class="col-lg-2 control-label">Name</label>
-            <div class="col-lg-10">
-                <input type="text" class="form-control name" name="name" id="name"
-                       placeholder="name">
-            </div>
-        </div>
+    <form class="form-horizontal form" action="checkUser.php" method="POST">
+
         <div class="form-group">
             <label for="email" class="col-lg-2 control-label">Email</label>
             <div class="col-lg-10">
@@ -41,19 +44,18 @@
         </div>
         <div class="form-group">
             <div class="col-lg-offset-2 col-lg-10">
-                <div class="checkbox">
-                    <label>
-                        <input type="checkbox">Remember
-                    </label>
+                <div>
+                    <input type="checkbox" name="remember" id="remember" value="1">
+                    <label>Remember Me</label>
                 </div>
             </div>
         </div>
         <div class="form-group">
             <div class="col-lg-offset-2 col-lg-10">
-                <input type="submit" class="btn btn-primary login" value="Login">
+                <input type="submit" class="btn btn-primary loginbtn" name="loginbtn" id="loginbtn" value="Login">
             </div>
         </div>
-        <a href="" class="back">Back</a>
+        <a href="../index.html" class="back">Back</a>
     </form>
 </main>
 </body>
