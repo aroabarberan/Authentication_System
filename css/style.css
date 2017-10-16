@@ -19,6 +19,29 @@ body {
     background-color: #f5f5f5
 }
 
+.col-sm-5 {
+    margin: 5px;
+}
+
+.menus h1 {
+    font-family: 'Roboto Slab', serif;
+}
+
+.menus {
+
+    width: 49%;
+    padding: 30px 70px;
+    margin-top: 100px;
+    border-radius: 5px;
+    background-color: #fff;
+    -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+
+.registerBtn, .loginBtn {
+    margin: 20px 5px;
+}
+
 .form {
     width: 50%;
     padding: 30px 70px;
@@ -33,16 +56,8 @@ body {
 .form-control {
     width: 90%;
 }
-
-.loginBtn, .loginBtn:hover {
-    padding: 8px 20px;
-    background: #2196F3;
-    border-color: #e1e1e1;
-    border-radius: 3px;
-}
-
-.loginBtn:hover {
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 3px 3px rgba(0, 0, 0, 0.23);
+#remember {
+    margin: 10px ;
 }
 
 .footer {

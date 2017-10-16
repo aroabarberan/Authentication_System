@@ -26,13 +26,12 @@ if (isExists($userLogin)) {
     <h1 class="login">Login </h1>
 </header>
 <main class=" container main">
-    <form class="form-horizontal form" action="checkUser.php" method="POST">
-
+    <form class="form-horizontal form" action="checkUserLogin.php" method="POST">
         <div class="form-group">
-            <label for="email" class="col-lg-2 control-label">Email</label>
+            <label for="name" class="col-lg-2 control-label">Name</label>
             <div class="col-lg-10">
-                <input type="email" class="form-control" name="email" id="email"
-                       placeholder="Contraseña">
+                <input type="text" class="form-control name" name="name" id="name"
+                       placeholder="name">
             </div>
         </div>
         <div class="form-group">
@@ -43,16 +42,16 @@ if (isExists($userLogin)) {
             </div>
         </div>
         <div class="form-group">
-            <div class="col-lg-offset-2 col-lg-10">
-                <div>
-                    <input type="checkbox" name="remember" id="remember" value="1">
-                    <label>Remember Me</label>
-                </div>
+            <div>
+                <label for="remember" class="col-lg-2 control-label">Remember</label>
+
+                <input type="checkbox" class="col-lg-offset-2 col-lg-1 remember" name="remember" id="remember"
+                       value="1">
             </div>
         </div>
         <div class="form-group">
             <div class="col-lg-offset-2 col-lg-10">
-                <input type="submit" class="btn btn-primary loginbtn" name="loginbtn" id="loginbtn" value="Login">
+                <input type="submit" class="btn btn-primary loginbtn" name="loginBtn" id="loginBtn" value="Login">
             </div>
         </div>
         <a href="../index.html" class="back">Back</a>

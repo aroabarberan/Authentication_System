@@ -21,7 +21,7 @@
     <h1 class="register">Register </h1>
 </header>
 <main class=" container main">
-    <form class="form-horizontal form" action="checkUser.php" method="POST">
+    <form class="form-horizontal form" action="checkUserRegister.php" method="POST">
         <div class="form-group">
             <label for="name" class="col-lg-2 control-label">Name</label>
             <div class="col-lg-10">
@@ -44,16 +44,17 @@
             </div>
         </div>
         <div class="form-group">
-            <div class="col-lg-offset-2 col-lg-10">
-                <div>
-                    <label>Remember</label>
-                    <input type="checkbox" name="remember" id="remember" value="1">
-                </div>
+            <div>
+                <label for="remember" class="col-lg-2 control-label">Remember</label>
+
+                <input type="checkbox" class="col-lg-offset-2 col-lg-1 remember" name="remember" id="remember"
+                       value="1">
             </div>
         </div>
         <div class="form-group">
             <div class="col-lg-offset-2 col-lg-10">
-                <input type="submit" class="btn btn-primary loginbtn" name="registerBtn" id="registerBtn" value="Register">
+                <input type="submit" class="btn btn-primary registerBtn" name="registerBtn" id="registerBtn"
+                       value="Register">
             </div>
         </div>
         <a href="../index.html" class="back">Back</a>
