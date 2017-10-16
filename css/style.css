@@ -25,11 +25,9 @@ body {
     margin: 0 auto;
     margin-top: 100px;
     border-radius: 5px;
-    /*background-color: #B3E5FC;*/
     background-color: #fff;
     -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
-
 }
 
 .form-control {
@@ -43,7 +41,7 @@ body {
     border-radius: 3px;
 }
 
-.login:hover {
+.loginBtn:hover {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 3px 3px rgba(0, 0, 0, 0.23);
 }
 
