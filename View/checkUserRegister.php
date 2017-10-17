@@ -20,6 +20,7 @@ if (isset($_POST['registerBtn'])) {
             $query = "INSERT INTO users (name, email, password, remember_token, is_admin) VALUES ('$name','$email', '$password', '$remember_token', '$is_admin')";
             mysqli_query($link, $query);
             header("location:chicha.php?name=$name&password=$password");
+
             if (isset($_POST['remember'])) {
                 setcookie($userLogin, $name, time() + (86400 * 30), "/");
                 $is_admin = $_POST['remember'];
