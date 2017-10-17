@@ -1,0 +1,4 @@
+RewriteEngine on
+
+
+RewriteRule ^chicha?$ chicha.php/$1/$2

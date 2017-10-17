@@ -1,6 +1,5 @@
 <?php
 $userLogin = 'user';
-$userNoLogin = '';
 
 function islogin($users, $name, $password)
 {
@@ -12,12 +11,12 @@ function islogin($users, $name, $password)
     return false;
 }
 
-function delete($name)
+function deleteCookie($name)
 {
     setcookie($name, "", time() - 3600, "/");
 }
 
-function isExists($name)
+function isExists($userLogin)
 {
-    return isset($_COOKIE[$name]);
+    return isset($_COOKIE[$userLogin]);
 }

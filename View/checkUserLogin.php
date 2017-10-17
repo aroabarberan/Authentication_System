@@ -15,16 +15,13 @@ if (isset($_POST['loginBtn'])) {
         $password = sha1($_POST['password']);
 
         if (islogin($users, $name, $password)) {
-            header('location:chicha.php');
+            if (isset($_POST['remember'])) {
+                setcookie($userLogin, $name, time() + (86400 * 30), "/");
+            }
+            header("location:chicha.php?name=$name&password=$password");
+        } else {
+            header('location:register.php');
         }
-
-        if (isset($_POST['remember'])) {
-            setcookie($userLogin, $name, time() + (86400 * 30), "/");
-        }
-
-
         mysqli_close($link);
-    } else {
-//        header("location:login.php");
     }
 }
