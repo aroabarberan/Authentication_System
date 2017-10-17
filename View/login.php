@@ -54,7 +54,7 @@ if (isExists($userLogin)) {
                 <input type="submit" class="btn btn-primary loginbtn" name="loginBtn" id="loginBtn" value="Login">
             </div>
         </div>
-        <a href="../index.html" class="back">Back</a>
+        <a href="welcome.php" class="back">Back</a>
     </form>
 </main>
 </body>

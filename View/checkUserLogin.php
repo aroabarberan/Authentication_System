@@ -17,10 +17,14 @@ if (isset($_POST['loginBtn'])) {
         if (islogin($users, $name, $password)) {
             if (isset($_POST['remember'])) {
                 setcookie($userLogin, $name, time() + (86400 * 30), "/");
+            } else {
+//                session_start();
+//                $_SESSION["name"] = $name;
+//                header("location:chicha.php");
             }
-            header("location:chicha.php?name=$name&password=$password");
+//            header("location:chicha.php?name=$name&password=$password");
         } else {
-            header('location:register.php');
+//        header('location:register.php');
         }
         mysqli_close($link);
     }

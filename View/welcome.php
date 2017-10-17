@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
           integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Berkshire+Swash|Nosifer" rel="stylesheet">
     <title>Home Page</title>
@@ -23,14 +23,14 @@
         <div class="row ">
             <div class="col-sm-5 menus">
                 <h1>Are you registered?</h1>
-                <a href="View/register.php"><input type="submit" class="btn btn-primary registerBtn" name="registerBtn"
-                                                   id="registerBtn" value="Register"></a>
+                <a href="register.php"><input type="submit" class="btn btn-primary registerBtn" name="registerBtn"
+                                              id="registerBtn" value="Register"></a>
             </div>
             <div class="col-sm-5 menus">
                 <h1>Are you logged in?</h1>
-                <a href="View/login.php"><input type="submit" class="btn btn-primary loginBtn" name="loginBtn"
-                                                id="loginBtn"
-                                                value="Login"></a>
+                <a href="login.php"><input type="submit" class="btn btn-primary loginBtn" name="loginBtn"
+                                           id="loginBtn"
+                                           value="Login"></a>
             </div>
         </div>
 
