@@ -2,9 +2,10 @@
 require_once '../DataBase/DataBase.php';
 require_once '../Model/Cookie.php';
 
-//if (isExists($userLogin)) {
-//    header("location:chicha.php");
-//}
+session_start();
+if (isset($_SESSION['user']) || Cookie::isExists('user')) {
+    header("location:chicha.php");
+}
 
 if (isset($_POST['registerBtn']) && !empty($_POST['name']) && !empty($_POST['password'])) {
     $name = filter_input(INPUT_POST, "name");
@@ -19,8 +20,10 @@ if (isset($_POST['registerBtn']) && !empty($_POST['name']) && !empty($_POST['pas
         session_start();
         $_SESSION['user'] = 'PHPSESSID';
         header("location:chicha.php");
+    } else {
+        header("location:login.php");
     }
-}  else {
+} else {
     header("location:register.php");
 }
 

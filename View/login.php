@@ -1,4 +1,10 @@
-<?php require_once '../Model/Cookie.php'; ?>
+<?php
+require_once '../Model/Cookie.php';
+session_start();
+if (isset($_SESSION['user']) || Cookie::isExists('user')) {
+    header("location:chicha.php");
+}
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -16,11 +22,6 @@
     <link href="https://fonts.googleapis.com/css?family=Berkshire+Swash|Nosifer" rel="stylesheet">
     <title>Authenticate System</title>
 </head>
-<?php
-//if (isExists($userLogin)) {
-//    header("location:chicha.php");
-//}
-?>
 <body>
 <header class="header">
     <h1 class="login">Login </h1>

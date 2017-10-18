@@ -1,3 +1,9 @@
+<?php
+session_start();
+if (isset($_SESSION['user']) || Cookie::isExists('user')) {
+    header("location:chicha.php");
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

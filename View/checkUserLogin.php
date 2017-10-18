@@ -3,9 +3,10 @@
 require_once '../DataBase/dataBase.php';
 require_once '../Model/Cookie.php';
 
-//if (isExists($userLogin)) {
-//    header("location:chicha.php");
-//}
+session_start();
+if (isset($_SESSION['user']) || Cookie::isExists('user')) {
+    header("location:chicha.php");
+}
 
 if (isset($_POST['loginBtn']) && !empty($_POST['name']) && !empty($_POST['password'])) {
     $users = DataBase::getUsers();
@@ -21,6 +22,9 @@ if (isset($_POST['loginBtn']) && !empty($_POST['name']) && !empty($_POST['passwo
             $_SESSION['user'] = 'PHPSESSID';
             header("location:chicha.php");
         }
+    } else {
+        // TODO
+        echo "<h1>Error. You are not login. Get out!!!!.</h1>";
     }
 } else {
     header("location:register.php");

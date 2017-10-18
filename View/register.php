@@ -1,3 +1,10 @@
+<?php
+require_once '../Model/Cookie.php';
+session_start();
+if (isset($_SESSION['user']) || Cookie::isExists('user')) {
+    header("location:chicha.php");
+}
+?>
 <!doctype html>
 <html lang="en">
 <head>
