@@ -4,7 +4,7 @@ require_once '../DataBase/dataBase.php';
 require_once '../Model/Cookie.php';
 
 session_start();
-if (isset($_SESSION['user']) || Cookie::isExists('user')) {
+if (isset($_SESSION['user']) || Cookie::exists('user')) {
     header("location:chicha.php");
 }
 
@@ -13,7 +13,7 @@ if (isset($_POST['loginBtn']) && !empty($_POST['name']) && !empty($_POST['passwo
     $name = filter_input(INPUT_POST, "name");
     $password = sha1($_POST['password']);
 
-    if (Cookie::islogin($users, $name, $password)) {
+    if (DataBase::isLogged($users, $name, $password)) {
         if (isset($_POST['remember'])) {
             setcookie('user', $name, time() + (86400 * 30), "/");
             header("location:chicha.php");

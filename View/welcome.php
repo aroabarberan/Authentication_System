@@ -1,6 +1,6 @@
 <?php
 session_start();
-if (isset($_SESSION['user']) || Cookie::isExists('user')) {
+if (isset($_SESSION['user']) || Cookie::exists('user')) {
     header("location:chicha.php");
 }
 ?>

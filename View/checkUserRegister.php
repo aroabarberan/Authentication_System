@@ -3,7 +3,7 @@ require_once '../DataBase/DataBase.php';
 require_once '../Model/Cookie.php';
 
 session_start();
-if (isset($_SESSION['user']) || Cookie::isExists('user')) {
+if (isset($_SESSION['user']) || Cookie::exists('user')) {
     header("location:chicha.php");
 }
 
@@ -15,7 +15,7 @@ if (isset($_POST['registerBtn']) && !empty($_POST['name']) && !empty($_POST['pas
 
     $users = DataBase::getUsers();
 
-    if (!Cookie::islogin($users, $name, $password)) {
+    if (!DataBase::isLogged($users, $name, $password)) {
         DataBase::insertUser($name, $email, $password, $remember_token);
         session_start();
         $_SESSION['user'] = 'PHPSESSID';

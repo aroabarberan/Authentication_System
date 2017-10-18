@@ -3,7 +3,7 @@ require_once '../DataBase/DataBase.php';
 require_once '../Model/Cookie.php';
 
 session_start();
-if (!isset($_SESSION['user']) && !Cookie::isExists('user')) {
+if (!isset($_SESSION['user']) && !Cookie::exists('user')) {
     header('location:login.php');
 }
 ?>

@@ -48,4 +48,14 @@ class DataBase
         return $users;
     }
 
+    public static function isLogged($users, $name, $password)
+    {
+        for ($i = 0; $i < count($users); $i++) {
+            if ($name == $users[$i]['name'] && $password == $users[$i]['password']) {
+                return true;
+            }
+        }
+        return false;
+    }
+
 }
