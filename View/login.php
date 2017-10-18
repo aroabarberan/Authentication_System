@@ -1,4 +1,4 @@
-<?php require_once("functionsCookies.php"); ?>
+<?php require_once '../Model/Cookie.php'; ?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -17,9 +17,9 @@
     <title>Authenticate System</title>
 </head>
 <?php
-if (isExists($userLogin)) {
-    header("location:chicha.php");
-}
+//if (isExists($userLogin)) {
+//    header("location:chicha.php");
+//}
 ?>
 <body>
 <header class="header">
@@ -51,7 +51,7 @@ if (isExists($userLogin)) {
         </div>
         <div class="form-group">
             <div class="col-lg-offset-2 col-lg-10">
-                <input type="submit" class="btn btn-primary loginbtn" name="loginBtn" id="loginBtn" value="Login">
+                <input type="submit" class="btn btn-primary loginBtn" name="loginBtn" id="loginBtn" value="Login">
             </div>
         </div>
         <a href="welcome.php" class="back">Back</a>

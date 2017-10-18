@@ -9,23 +9,36 @@ class DataBase
     public $password = "";
     public $database = "authentication_system";
 
-    function connect()
+    public static function connect()
     {
-        return mysqli_connect($this->host, $this->username, $this->password, $this->database);
+        $datas = DataBase::readFileEnv();
+        return mysqli_connect($datas['DB_HOST'], $datas['DB_USERNAME'], $datas['DB_PASSWORD'], $datas['DB_DATABASE']);
     }
 
     public static function readFileEnv()
     {
         $file = fopen('../.env', 'r');
+        $datas = [];
         while (!feof($file)) {
             $line = fgets($file);
-            $fields = explode('=', $line);
+            $fields = explode('=', trim($line));
+            $datas[$fields[0]] = $fields[1];
         }
-        return $fields;
+        fclose($file);
+        return $datas;
     }
 
-    public static function getAllUsersDataBase($link)
+    public static function insertUser($name, $email, $password, $remember_token)
     {
+        $link = DataBase::connect();
+        $query = "INSERT INTO users (name, email, password, remember_token) VALUES ('$name','$email', '$password', '$remember_token')";
+        mysqli_query($link, $query);
+        mysqli_close($link);
+    }
+
+    public static function getUsers()
+    {
+        $link = DataBase::connect();
         $result = mysqli_query($link, "SELECT * FROM users");
         $users = [];
         while ($row = mysqli_fetch_assoc($result)) {
